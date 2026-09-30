@@ -26,7 +26,7 @@ import heroFactory from "@/assets/jyb-hero-factory.jpg";
 import cncProject from "@/assets/jyb-cnc-project.jpg";
 import weldingProject from "@/assets/jyb-welding-project.jpg";
 import bendingProject from "@/assets/jyb-bending-project.jpg";
-import jybLogo from "@/assets/metalurgica-jyb-logo.jpg.asset.json";
+import jybLogo from "@/assets/metalurgica-jyb-logo-cropped.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
