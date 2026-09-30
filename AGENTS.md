@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Reusable interactive controls live in `src/components/ui`; this keeps page code aligned with one visual system.
+- Brand colors, typography, shadows, and decorative patterns are semantic tokens in `src/styles.css`; this prevents one-off visual values.
