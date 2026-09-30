@@ -26,6 +26,7 @@ import heroFactory from "@/assets/jyb-hero-factory.jpg";
 import cncProject from "@/assets/jyb-cnc-project.jpg";
 import weldingProject from "@/assets/jyb-welding-project.jpg";
 import bendingProject from "@/assets/jyb-bending-project.jpg";
+import jybLogo from "@/assets/metalurgica-jyb-logo.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -86,11 +87,7 @@ function Index() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/20 bg-surface-deep/95 text-secondary-foreground backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#inicio" className="flex items-center gap-3" aria-label="Metalúrgica JYB — início">
-            <span className="flex size-11 items-center justify-center border-2 border-primary font-display text-xl font-extrabold text-primary">JYB</span>
-            <span className="hidden leading-none sm:block">
-              <strong className="block font-display text-xl uppercase">Metalúrgica</strong>
-              <small className="mt-1 block text-[10px] font-semibold uppercase tracking-[0.24em] text-steel">Precisão industrial</small>
-            </span>
+            <img src={jybLogo.url} alt="Metalúrgica JYB" className="h-12 w-auto object-contain" width={160} height={52} />
           </a>
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
             {[["Serviços", "#servicos"], ["Diferenciais", "#diferenciais"], ["Projetos", "#projetos"], ["Contato", "#contato"]].map(([label, href]) => (
@@ -209,7 +206,7 @@ function Index() {
 
       <footer id="contato" className="scroll-mt-20 bg-surface-deep text-secondary-foreground">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
-          <div className="sm:col-span-2"><div className="flex items-center gap-3"><span className="flex size-11 items-center justify-center border-2 border-primary font-display text-xl font-extrabold text-primary">JYB</span><strong className="font-display text-2xl uppercase">Metalúrgica JYB</strong></div><p className="mt-5 max-w-md leading-relaxed text-steel">Soluções em usinagem e caldeiraria para empresas que valorizam precisão, confiabilidade e parceria de longo prazo.</p></div>
+          <div className="sm:col-span-2"><img src={jybLogo.url} alt="Metalúrgica JYB" className="h-16 w-auto object-contain" width={200} height={65} /><p className="mt-5 max-w-md leading-relaxed text-steel">Soluções em usinagem e caldeiraria para empresas que valorizam precisão, confiabilidade e parceria de longo prazo.</p></div>
           <div><h3 className="text-lg font-bold uppercase">Comercial</h3><div className="mt-5 space-y-4 text-steel"><a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex gap-3 hover:text-primary"><Phone className="size-5" /> Atendimento via WhatsApp</a><a href="#orcamento" className="flex gap-3 hover:text-primary"><Mail className="size-5" /> Solicitar cotação</a><div className="flex gap-3"><Clock3 className="size-5" /> Atendimento comercial</div></div></div>
           <div><h3 className="text-lg font-bold uppercase">Localização</h3><div className="mt-5 flex gap-3 text-steel"><MapPin className="size-5 shrink-0" /><p>Rio do Sul, Santa Catarina<br /><span className="text-sm">Atendimento no Alto Vale e em todo o estado</span></p></div><div className="mt-6 flex gap-3"><a href="#" aria-label="Instagram" className="flex size-10 items-center justify-center border border-steel/30 hover:border-primary hover:text-primary"><Instagram className="size-5" /></a><a href="#" aria-label="LinkedIn" className="flex size-10 items-center justify-center border border-steel/30 hover:border-primary hover:text-primary"><Linkedin className="size-5" /></a></div></div>
         </div>
