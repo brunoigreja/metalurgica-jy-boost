@@ -123,9 +123,25 @@ function Index() {
               <Button asChild size="large"><a href={whatsappUrl} target="_blank" rel="noreferrer"><MessageCircle className="size-5" /> Solicitar orçamento via WhatsApp</a></Button>
               <Button asChild size="large" variant="outline"><a href="#servicos" className="border-steel/60 text-secondary-foreground hover:border-primary hover:text-primary">Conhecer serviços <ArrowRight className="size-5" /></a></Button>
             </div>
-            <div className="mt-12 grid max-w-2xl grid-cols-2 gap-px bg-steel/20 sm:grid-cols-3">
-              {[ ["+10 anos", "de experiência"], ["Alto Vale", "e todo o estado"], ["CAD · PDF", "leitura técnica"] ].map(([value, label], index) => (
-                <div key={value} className={`bg-surface-deep/70 px-5 py-4 ${index === 2 ? "col-span-2 sm:col-span-1" : ""}`}><strong className="block font-display text-2xl text-secondary-foreground">{value}</strong><span className="text-xs uppercase tracking-[0.12em] text-steel">{label}</span></div>
+            <div className="mt-12 grid max-w-2xl grid-cols-2 gap-px bg-steel/20 rounded-lg overflow-hidden sm:grid-cols-3">
+              {[ 
+                ["+10 anos", "de experiência"], 
+                ["Alto Vale", "e todo o estado"], 
+                ["CAD · PDF", "leitura técnica"] 
+              ].map(([value, label], index) => (
+                <div 
+                  key={value} 
+                  className={`group bg-slate-950 px-5 py-4 transition-all duration-300 hover:bg-slate-900 hover:outline hover:outline-2 hover:outline-primary hover:-translate-y-0.5 hover:z-10 ${
+                    index === 2 ? "col-span-2 sm:col-span-1" : ""
+                  }`}
+                >
+                  <strong className="block font-display text-2xl text-secondary-foreground group-hover:text-primary transition-colors">
+                    {value}
+                  </strong>
+                  <span className="text-xs uppercase tracking-[0.12em] text-steel">
+                    {label}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
@@ -151,12 +167,23 @@ function Index() {
       <section id="diferenciais" className="scroll-mt-20 bg-surface-dark py-20 text-secondary-foreground technical-grid lg:py-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionTitle dark eyebrow="Por que escolher a JYB" title="Seu projeto tratado com responsabilidade técnica" text="Entendemos o impacto de cada componente na sua produção. Por isso, combinamos experiência, processo e comunicação direta." />
+
           <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {advantages.map(({ icon: Icon, title, text }) => (
-              <article key={title} className="border-t-2 border-primary pt-6">
-                <Icon className="size-8 text-primary" />
-                <h3 className="mt-5 text-2xl font-bold uppercase">{title}</h3>
-                <p className="mt-3 leading-relaxed text-steel">{text}</p>
+              <article
+                key={title}
+                className="group relative border-t-2 border-primary/30 pt-6 px-5 pb-6 rounded-b-xl bg-slate-900/40 border-x border-b border-slate-800/80 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-slate-900/80 hover:shadow-xl hover:shadow-blue-500/10"
+              >
+                {/* Linha animada de destaque no topo */}
+                <div className="absolute top-0 left-0 h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
+
+                <Icon className="size-8 text-primary transition-transform duration-300 group-hover:scale-110" />
+                <h3 className="mt-5 text-2xl font-bold uppercase transition-colors group-hover:text-primary">
+                  {title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-steel group-hover:text-slate-300 transition-colors">
+                  {text}
+                </p>
               </article>
             ))}
           </div>
@@ -170,10 +197,15 @@ function Index() {
             <ProjectImage src={cncProject} alt="Usinagem de flange metálica em torno CNC" title="Usinagem CNC" detail="Componentes de precisão" className="md:col-span-7" />
             <ProjectImage src={weldingProject} alt="Soldador montando estrutura metálica industrial" title="Caldeiraria" detail="Montagem e soldagem" className="md:col-span-5" />
             <ProjectImage src={bendingProject} alt="Chapa metálica sendo dobrada em prensa industrial" title="Corte e dobra" detail="Conformação de chapas" className="md:col-span-5" />
-            <div className="flex min-h-72 flex-col justify-between bg-primary p-8 md:col-span-7 lg:p-10">
-              <Sparkles className="size-9" />
-              <div><p className="max-w-xl font-display text-3xl font-bold uppercase leading-tight lg:text-4xl">Tem uma demanda fora do padrão?</p><p className="mt-3 max-w-xl font-medium">Nossa equipe analisa a aplicação e desenvolve a melhor rota de fabricação.</p></div>
-              <a href="#orcamento" className="mt-8 inline-flex items-center gap-2 font-bold">Enviar desenho técnico <ArrowRight className="size-5" /></a>
+            <div className="flex min-h-72 flex-col justify-between bg-primary-strong p-8 md:col-span-7 lg:p-10">
+              <Sparkles className="size-9 text-card" />
+              <div><p className="max-w-xl font-display text-3xl font-bold text-card uppercase leading-tight lg:text-4xl">Tem uma demanda fora do padrão?</p><p className="mt-3 max-w-xl font-medium">Nossa equipe analisa a aplicação e desenvolve a melhor rota de fabricação.</p></div>
+              <a 
+                href="#orcamento" 
+                className="group mt-8 inline-flex items-center gap-2 font-bold text-card transition-colors duration-200 hover:text-muted">
+                <span>Enviar desenho técnico</span>
+                <ArrowRight className="size-5 transition-transform duration-200 group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </div>
