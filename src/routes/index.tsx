@@ -150,14 +150,37 @@ function Index() {
 
       <section id="servicos" className="scroll-mt-20 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionTitle eyebrow="Capacidade produtiva" title="Soluções completas para demandas industriais" text="Da peça unitária ao conjunto fabricado, transformamos especificações técnicas em soluções prontas para operar." />
-          <div className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
+          <SectionTitle
+            eyebrow="Capacidade produtiva"
+            title="Soluções completas para demandas industriais"
+            text="Da peça unitária ao conjunto fabricado, transformamos especificações técnicas em soluções prontas para operar."
+          />
+
+          <div className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3 rounded-xl overflow-hidden">
             {services.map((service) => (
-              <article key={service.number} className="group relative bg-card p-7 transition-colors hover:bg-surface-dark hover:text-secondary-foreground lg:p-9">
-                <span className="font-display text-sm font-bold text-primary">{service.number}</span>
-                <Wrench className="mt-8 size-7 text-muted-foreground transition-colors group-hover:text-primary" />
-                <h3 className="mt-5 text-2xl font-bold uppercase">{service.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted-foreground group-hover:text-steel">{service.text}</p>
+              <article
+                key={service.number}
+                className="group relative bg-card p-7 lg:p-9 transition-all duration-300 hover:z-10 hover:-translate-y-1 hover:bg-surface-dark hover:text-secondary-foreground hover:shadow-2xl hover:shadow-primary/10 hover:outline hover:outline-2 hover:outline-primary hover:rounded-lg"
+              >
+                {/* Linha animada no topo */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-sm font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                    {service.number}
+                  </span>
+                  <svg className="size-4 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+
+                <Wrench className="mt-8 size-7 text-muted-foreground transition-all duration-300 group-hover:rotate-12 group-hover:text-primary" />
+                <h3 className="mt-5 text-2xl font-bold uppercase transition-colors group-hover:text-primary">
+                  {service.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground transition-colors group-hover:text-steel">
+                  {service.text}
+                </p>
               </article>
             ))}
           </div>
