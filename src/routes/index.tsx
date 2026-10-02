@@ -26,7 +26,9 @@ import heroFactory from "@/assets/jyb-hero-factory.jpg";
 import cncProject from "@/assets/jyb-cnc-project.jpg";
 import weldingProject from "@/assets/jyb-welding-project.jpg";
 import bendingProject from "@/assets/jyb-bending-project.jpg";
-import jybLogo from "@/assets/metalurgica-jyb-logo-cropped.jpg.asset.json";
+import jybLogo from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
+import logoAzul from "@/assets/logo-azul.jpg";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -87,7 +89,7 @@ function Index() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/20 bg-surface-deep/95 text-secondary-foreground backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#inicio" className="flex items-center gap-3" aria-label="Metalúrgica JYB — início">
-            <img src={jybLogo.url} alt="Metalúrgica JYB" className="h-12 w-auto object-contain" width={160} height={52} />
+            <img src={jybLogo} alt="Metalúrgica JYB" className="h-15 w-auto object-contain" width={170} height={80} />
           </a>
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">
             {[["Serviços", "#servicos"], ["Diferenciais", "#diferenciais"], ["Projetos", "#projetos"], ["Contato", "#contato"]].map(([label, href]) => (
@@ -206,11 +208,11 @@ function Index() {
 
       <footer id="contato" className="scroll-mt-20 bg-surface-deep text-secondary-foreground">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
-          <div className="sm:col-span-2"><img src={jybLogo.url} alt="Metalúrgica JYB" className="h-16 w-auto object-contain" width={200} height={65} /><p className="mt-5 max-w-md leading-relaxed text-steel">Soluções em usinagem e caldeiraria para empresas que valorizam precisão, confiabilidade e parceria de longo prazo.</p></div>
+          <div className="sm:col-span-2"><img src={jybLogo} alt="Metalúrgica JYB" className="h-20 w-auto object-contain" width={200} height={100} /><p className="mt-5 max-w-md leading-relaxed text-steel">Soluções em usinagem e caldeiraria para empresas que valorizam precisão, confiabilidade e parceria de longo prazo.</p></div>
           <div><h3 className="text-lg font-bold uppercase">Comercial</h3><div className="mt-5 space-y-4 text-steel"><a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex gap-3 hover:text-primary"><Phone className="size-5" /> Atendimento via WhatsApp</a><a href="#orcamento" className="flex gap-3 hover:text-primary"><Mail className="size-5" /> Solicitar cotação</a><div className="flex gap-3"><Clock3 className="size-5" /> Atendimento comercial</div></div></div>
           <div><h3 className="text-lg font-bold uppercase">Localização</h3><div className="mt-5 flex gap-3 text-steel"><MapPin className="size-5 shrink-0" /><p>Rio do Sul, Santa Catarina<br /><span className="text-sm">Atendimento no Alto Vale e em todo o estado</span></p></div><div className="mt-6 flex gap-3"><a href="#" aria-label="Instagram" className="flex size-10 items-center justify-center border border-steel/30 hover:border-primary hover:text-primary"><Instagram className="size-5" /></a><a href="#" aria-label="LinkedIn" className="flex size-10 items-center justify-center border border-steel/30 hover:border-primary hover:text-primary"><Linkedin className="size-5" /></a></div></div>
         </div>
-        <div className="border-t border-steel/15"><div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs text-steel sm:flex-row sm:justify-between lg:px-8"><span>© 2026 Metalúrgica JYB. Todos os direitos reservados.</span><span>Rio do Sul · SC</span></div></div>
+        <div className="border-t border-steel/15"><div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs text-steel sm:flex-row sm:justify-between lg:px-8"><span>© 2026 Metalúrgica JYB. Todos os direitos reservados.</span><span>Desenvolvido por Bruno Igreja</span></div></div>
       </footer>
 
       <a href={whatsappUrl} target="_blank" rel="noreferrer" aria-label="Solicitar orçamento pelo WhatsApp" className="fixed bottom-5 right-5 z-40 flex size-14 items-center justify-center rounded-full bg-success text-primary-foreground shadow-xl transition-transform hover:scale-105 sm:size-16"><MessageCircle className="size-7" /></a>
